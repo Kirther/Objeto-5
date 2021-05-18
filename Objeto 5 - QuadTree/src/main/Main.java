@@ -6,7 +6,7 @@ public class Main {
 	public static int canvasHeight = 800;
 	
 	public static Particles[] particles;
-	public static int particlesCount = 50000;
+	public static int particlesCount = 10000;
 	static int circleSize = 5;
 
 	public static void main(String[] args) {
