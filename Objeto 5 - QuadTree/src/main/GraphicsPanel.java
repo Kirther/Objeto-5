@@ -42,7 +42,7 @@ public class GraphicsPanel extends JPanel implements ActionListener{
         	if (processCounter == 100)
         	{
         		long averageTime = totalTime / 100;
-            	System.out.println("O tempo médio de processamento das últimas 100 iterações foi de " + averageTime + " mili segundos.");
+            	System.out.println("O tempo médio de processamento das últimas 100 iterações foi de " + averageTime + " mili-segundos.");
         	}
         }
         
@@ -113,7 +113,7 @@ public class GraphicsPanel extends JPanel implements ActionListener{
 					particles[i].collision = true;
 				    particles[j].collision = true;
 					    
-				    particles[i].stopcollision = true;
+				    //particles[i].stopcollision = true;
 							
 					if (particles[i].velocityX != particles[j].velocityX)
 					{
@@ -130,13 +130,13 @@ public class GraphicsPanel extends JPanel implements ActionListener{
 	
 			}
 			
-			if (i == particles.length - 1)
+			/*if (i == particles.length - 1)
 			{
 				for (int z = 0; z < particles.length; z++)
 				{
 					particles[z].stopcollision = false;
 				}
-			}
+			}*/
 		}
 		
 	}

@@ -133,17 +133,8 @@ public class QuadTree {
 		{
 			for (int i = 0; i < allocatedParticles.size(); i++)
 			{
-				for (int j = 0; j < allocatedParticles.size(); j++)
-				{
-					if (!allocatedParticles.get(j).stopcollision)
-					{
-						if (i == j)
-						{
-							//não faz nada
-						}
-						else
-						{
-							//a gente verifica a colisão
+				for (int j = i + 1; j < allocatedParticles.size(); j++)
+				{	
 							if ((allocatedParticles.get(j).posX - allocatedParticles.get(i).posX) * (allocatedParticles.get(j).posX - allocatedParticles.get(i).posX) +
 							(allocatedParticles.get(j).posY - allocatedParticles.get(i).posY) * (allocatedParticles.get(j).posY - allocatedParticles.get(i).posY) <=
 							Main.circleSize * Main.circleSize)
@@ -165,23 +156,13 @@ public class QuadTree {
 									allocatedParticles.get(j).InvertVelocityY();
 								}
 							}
-		
-						}
-					}
 				}
-				
-				if (i == allocatedParticles.size() - 1)
-				{
-					for (int z = 0; z < allocatedParticles.size(); z++)
-					{
-						allocatedParticles.get(z).stopcollision = false;
-					}
-				}
+
 			}
 		}
 		else
 		{
-			if (upperRight != null)
+			if (isDivided)
 			{
 				upperRight.CheckQuadTreeCollision();
 				upperLeft.CheckQuadTreeCollision();
